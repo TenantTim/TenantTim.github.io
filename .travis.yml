@@ -7,6 +7,7 @@ cache:
 
 before_install:
   - npm install hexo-cli -g
+  - npm install hexo-deployer-git --save
 
 install:
   - npm install
@@ -15,16 +16,10 @@ install:
 script:
   - hexo clean
   - hexo generate
-
-deploy:
-  provider: pages
-  skip-cleanup: true
-  keep-history: true
-  github-token: $GithubAccessToken
-  local-dir: public
-  target-branch: master
-  on:
-    branch: hexo
+  - git config user.name "TenantTim"
+  - git config user.email "t-i.m@outlook.com"
+  - sed -i "s/git@github.com:/https:\/\/${GithubAccessToken}@github.com\//" _config.yml
+  - hexo deploy
 
 branches:
   only:
