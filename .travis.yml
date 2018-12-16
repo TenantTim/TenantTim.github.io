@@ -14,13 +14,23 @@ install:
   - npm rebuild node-sass --force
 
 script:
-  - hexo clean
-  - hexo generate
-  - git config user.name "TenantTim"
-  - git config user.email "t-i.m@outlook.com"
-  - sed -i "s/git@github.com:/https:\/\/${GithubAccessToken}@github.com\//" _config.yml
-  - hexo deploy
+  - hexo clean && hexo generate
+
+after_script:
+  - git config --global user.name "TenantTim"
+  - git config --global user.email "t-i.m@outlook.com"
+  - git clone https://${GithubAddress} .deploy_git
+  - cd .deploy_git
+  - git checkout master
+  - cd ../
+  - sed -i'' "s~${GithubAddress}~${GithubAccessToken}:x-oauth-basic@${GithubAddress}~" _config.yml
+  - hexo deploy > log.txt 2>&1
+  - cat log.txt | sed "s~${GithubAccessToken}~TOKEN~g"
 
 branches:
   only:
   - hexo
+
+env:
+  global:
+    - GithubAddress: github.com/tenanttim/tenanttim.github.io.git
