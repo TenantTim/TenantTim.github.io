@@ -84,5 +84,5 @@ social:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy: 
   type: git
-  repo: https://git@github.com/TenantTim/tenanttim.github.io.git
+  repo: https://Travis@github.com/TenantTim/tenanttim.github.io.git
 branch: master
