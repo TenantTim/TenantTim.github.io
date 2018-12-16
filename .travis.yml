@@ -1,24 +1,28 @@
 language: node_js
-node_js:
-- 8.9.0
+node_js: stable
 cache:
+  apt: true
   directories:
-  - node_modules
+    - node_modules
+
 before_install:
-- npm install hexo-cli -g
+  - npm install hexo-cli -g
+
 install:
-- npm install
+  - npm install
+  - npm rebuild node-sass --force
+
 script:
-- hexo clean
-- hexo generate
+  - hexo clean
+  - hexo generate
+
 after_script:
   - cd ./public
   - git init
-  - git config user.name TenantTim
-  - git config user.email t-i.m@outlook.com
+  - git config user.name "TenantTim"
+  - git config user.email "t-i.m@outlook.com"
   - git add .
   - git commit -m "Auto generated blogging by Travis"
-  # Github Pages
   - git push --force --quiet "https://${GithubAccessToken}@${BlogMasterBranch}" master:master 
 
 branches:
@@ -28,4 +32,4 @@ branches:
 env:
  global:
    # Github Pages
-   - BlogMasterBranch: github.com/tenanttim/tenanttim.github.io
+   - BlogMasterBranch: github.com/tenanttim/tenanttim.github.io.git
