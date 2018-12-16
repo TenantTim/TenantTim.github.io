@@ -16,7 +16,6 @@ install:
 script:
   - hexo clean
   - hexo generate
-  - cd ./public
   - git init
   - git config user.name "TenantTim"
   - git config user.email "t-i.m@outlook.com"
