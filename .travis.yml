@@ -16,8 +16,6 @@ install:
 script:
   - hexo clean
   - hexo generate
-
-after_script:
   - cd ./public
   - git init
   - git config user.name "TenantTim"
