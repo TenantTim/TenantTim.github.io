@@ -174,10 +174,11 @@ site_state: true
 # Key is the link label showing to end users.
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
-#social:
-  #GitHub: https://github.com/yourname || github
-  #E-Mail: mailto:yourname@gmail.com || envelope
-  #Weibo: https://weibo.com/yourname || weibo
+social:
+  Github: https://github.com/tenanttim || github
+  E-Mail: mailto:t-i.m@outlook.com || envelope
+  Weibo: https://weibo.com/timevoid || weibo
+  zhihu: https://www.zhihu.com/people/TimZhang_ || leanpub
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
@@ -191,7 +192,6 @@ social_icons:
   enable: true
   icons_only: false
   transition: false
-  Github: https://github.com/tenanttim || github
 
 # Follow me on GitHub banner in right-top corner.
 # Usage: `permalink || title`
