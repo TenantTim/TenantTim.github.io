@@ -75,14 +75,14 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: next
 
+# Social links
+social:
+  Github: https://github.com/tenanttim || github
+  Weibo: https://weibo.com/timevoid || weibo
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy: 
   type: git
   repo: https:github.com/TenantTim/tenanttim.github.io.git
 branch: master
-
-# Social links
-social:
-  Github: https://github.com/tenanttim || github
-  Weibo: https://weibo.com/timevoid || weibo
