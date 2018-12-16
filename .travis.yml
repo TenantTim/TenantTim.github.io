@@ -7,6 +7,7 @@ cache:
 
 before_install:
   - npm install hexo-cli -g
+  - npm install hexo-deployer-git --save
 
 install:
   - npm install
@@ -21,9 +22,7 @@ after_script:
   - git init
   - git config user.name "TenantTim"
   - git config user.email "t-i.m@outlook.com"
-  - git add .
-  - git commit -m "Auto generated blogging by Travis"
-  - git push --force --quiet "https://${GithubAccessToken}@${BlogMasterBranch}" master:master 
+  - hexo deploy
 
 branches:
   only:
