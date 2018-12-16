@@ -23,7 +23,8 @@ after_script:
   - cd .deploy_git
   - git checkout master
   - cd ../
-  - sed -i'' "s~${GithubAddress}~${GithubAccessToken}:x-oauth-basic@${GithubAddress}~" _config.yml
+  - sed -i'' "s~git@github.com:~https://${GithubAccessToken}@github.com/~" _config.yml
+  # - sed -i'' "s~${GithubAddress}~${GithubAccessToken}:x-oauth-basic@${GithubAddress}~" _config.yml
   - hexo deploy > log.txt 2>&1
   - cat log.txt | sed "s~${GithubAccessToken}~TOKEN~g"
 
