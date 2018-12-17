@@ -2,6 +2,10 @@
 title: Markdown cheatsheet
 ---
 
+*Although not totally, I'm a new for [Markdown](https://en.wikipedia.org/wiki/Markdown).*
+
+*Leave a cheatsheet here and I don't have to google it every time :D*
+
 # Markdown cheatsheet
 
 _(Also see [remarkable][], the markdown parser created by the author of this cheatsheet)_ 
